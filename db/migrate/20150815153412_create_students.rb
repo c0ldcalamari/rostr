@@ -4,7 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name
       t.string :password
 
-      t.references :event
+      t.references :group
       t.timestamps
     end
   end
