@@ -1,3 +1,4 @@
 class CriteriaStudent < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :criteria
+  belongs_to :student
 end

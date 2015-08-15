@@ -1,3 +1,4 @@
 class Student < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :criterias_students
+  has_many :criterias, through: :criterias_students
 end
