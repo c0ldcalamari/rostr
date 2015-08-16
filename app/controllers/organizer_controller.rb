@@ -74,7 +74,7 @@ post '/user/:user_id/event/:event_id' do
   event = Event.find(params[:event_id])
   event.update_attributes(active: true)
 
-  sorted_students = advance_sorter(@students)
+  # sorted_students = advance_sorter(@students)
   #brenda's algorithm
 
   redirect "/user/#{current_user.id}/event/#{event.id}/groups"
