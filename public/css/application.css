@@ -12,9 +12,16 @@
 
   }
 
+  html {
+  	background-image: url("http://i.imgur.com/vO1Uodn.png" );
+  	background-repeat: no-repeat;
+  	background-size: cover;
+
+  }
   p {
   	font-family: 'Roboto', sans-serif;
   }
+
 
 #bars{
 	 margin-left: auto;
