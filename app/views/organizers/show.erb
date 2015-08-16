@@ -1,3 +1,24 @@
 <!-- organizer dashboard for all their events -->
+<p> Hi Organizer</p>
 
-Hi Organizer!
+<ul>
+  <li>
+    <% @events.each do |event|  %>
+    <%= event.title %>
+<% end %>
+  </li>
+</ul>
+
+
+<form id="create_event_form" action="/user/<%=current_user.id %>/create" method="post">
+  <input type="text" name="title" placeholder="Event Title"> <br>
+
+  <input type="text" name="subject1" placeholder="Category 1"> <br>
+  <input type="text" name="subject2" placeholder="Category 2"> <br>
+  <input type="text" name="subject3" placeholder="Category 3"> <br>
+  <input type="text" name="subject4" placeholder="Category 4"> <br>
+  <input type="text" name="subject5" placeholder="Category 5"> <br>
+
+  <input type="submit" value="Create Event">
+</form>
+
