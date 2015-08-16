@@ -3,7 +3,7 @@
 
 <% @events.each do |event|  %>
 <ul>
-    <%= event.title %>
+    <a href="/user/<%= current_user.id %>/event/<%= event.id %>"><%= event.title %></a>
 </ul>
 <% end %>
 
