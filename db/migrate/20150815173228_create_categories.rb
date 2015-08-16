@@ -1,10 +1,9 @@
-class CreateCriterias < ActiveRecord::Migration
+class CreateCategories < ActiveRecord::Migration
   def change
-    create_table :criterias do |t|
+    create_table :categories do |t|
       t.string :name
       t.integer :rating
-      t.integer :category
-
+      t.integer :subject
       t.references :event
       t.timestamps
     end
