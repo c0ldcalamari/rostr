@@ -11,6 +11,7 @@ gem 'sinatra-contrib'
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
+gem 'awesome_print'
 gem 'rake'
 gem 'shotgun'
 

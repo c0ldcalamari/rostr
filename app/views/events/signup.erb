@@ -4,32 +4,39 @@
 <%= @event.sub1 %>
 
 <form id="student_ratings" class="ui radio checkbox" action='/events/<%= @event.id %>/category' method="post">
-  <input type="radio" name="rate1" value="begginner">Beginner
+  <input type="radio" name="rate1" value="beginner">Beginner
   <input type="radio" name="rate1" value="intermediate">Intermediate
-  <input type="radio" name="rate1" value="advance">Advance
+  <input type="radio" name="rate1" value="advanced">Advanced
   <br><br><br>
 
   <%= @event.sub2 %> <br>
-  <input type="radio" name="rate2" value="begginner">Beginner
+  <input type="radio" name="rate2" value="beginner">Beginner
   <input type="radio" name="rate2" value="intermediate">Intermediate
-  <input type="radio" name="rate2" value="advance">Advance
+  <input type="radio" name="rate2" value="advanced">Advanced
   <br><br><br>
 
   <%= @event.sub3 %> <br>
-  <input type="radio" name="rate3" value="begginner">Beginner
+  <input type="radio" name="rate3" value="beginner">Beginner
   <input type="radio" name="rate3" value="intermediate">Intermediate
-  <input type="radio" name="rate3" value="advance">Advance
+  <input type="radio" name="rate3" value="advanced">Advanced
   <br><br><br>
 
   <%= @event.sub4 %> <br>
-  <input type="radio" name="rate4" value="begginner">Beginner
+  <input type="radio" name="rate4" value="beginner">Beginner
   <input type="radio" name="rate4" value="intermediate">Intermediate
-  <input type="radio" name="rate4" value="advance">Advance
+  <input type="radio" name="rate4" value="advanced">Advanced
   <br><br><br>
 
   <%= @event.sub5 %> <br>
-  <input type="radio" name="rate5" value="begginner">Beginner
+  <input type="radio" name="rate5" value="beginner">Beginner
   <input type="radio" name="rate5" value="intermediate">Intermediate
-  <input type="radio" name="rate5" value="advance">Advance
+  <input type="radio" name="rate5" value="advanced">Advanced
+
+  <br><br><br><br>
+  <label for="name">Name</label>
+  <input type="text" name="name" placeholder="Name"><br><br>
+  <label for="email">Email</label>
+  <input type="text" name="email" placeholder="email@domain.com"><br><br>
+
   <br><br><input type="submit" value="Submit!">
 </form>
