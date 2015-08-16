@@ -1,0 +1,16 @@
+Event has started. Show all groups
+
+<div id="group_list">
+  <ol>
+  <% @groups.each do |group| %>
+      <li>
+      <%= group.name %>
+      <% @students.each do |student| %>
+        <% if(student.group_id == group.id) %>
+          <ul><%= student.name %></ul>
+        <% end  %>
+      <% end  %>
+      </li>
+  <% end %>
+  </ol>
+</div>
