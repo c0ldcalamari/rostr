@@ -1,0 +1,12 @@
+<h1><%= @event.title %></h1>
+
+<% @event.groups.each do |group| %>
+  <%= group.name %>
+  <form action="/events/<%=@event.id%>/groups/<%=group.id%>" method = "post">
+    <input type = "text" name="email" placeholder="Email">
+    <input type="submit" value="Enter Group">
+  </form>
+<%end%>
+
+
+
