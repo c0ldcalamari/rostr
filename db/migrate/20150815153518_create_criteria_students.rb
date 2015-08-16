@@ -1,6 +1,6 @@
-class CreateCriteriasStudents < ActiveRecord::Migration
+class CreateCriteriaStudents < ActiveRecord::Migration
   def change
-      create_table :criterias_students do |t|
+      create_table :criteria_students do |t|
 
       t.references :student
       t.references :criteria
