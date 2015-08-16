@@ -5,6 +5,10 @@ Organizer.create(username: "admin2", password: "admin")
 Event.create(title: "DBC Hackathon", active: false, organizer_id: 1)
 Event.create(title: "Math Class", active: false, organizer_id: 2)
 
+10.times do
+  name = Faker::Team.creature
+  Group.create(name: name, event_id: 1)
+end
 
 20.times do
   name = Faker::Name.name
