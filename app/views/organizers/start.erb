@@ -1,7 +1,8 @@
 <!-- organizer starts the event -->
 
-<%= @event.title %>
+<%= @event.title %> 
 <div id="student_list">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
   <ol>
   <% @students.each do |student| %>
   <li><%= student.name  %></li>

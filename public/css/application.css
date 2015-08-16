@@ -1,0 +1,73 @@
+ html {
+ 		background-color: #cdd2dd;
+ 		font-family: 'Roboto', sans-serif;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+	}
+	*, *:before, *:after {
+  	-webkit-box-sizing: inherit;
+  	-moz-box-sizing: inherit;
+  	box-sizing: inherit;
+
+  }
+
+  p {
+  	font-family: 'Roboto', sans-serif;
+  }
+
+#bars{
+	 margin-left: auto;
+	 margin-right: auto;
+	 width: 750px;
+	 padding-bottom: 10em;
+}
+
+#login_info {
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+	font-family: 'Roboto', sans-serif;
+
+}
+ #logo {
+	 margin-left: auto;
+	 margin-right: auto;
+	 padding-top: 20px;
+	 width: 600px;
+ }
+
+
+#logo_small{
+	transform: scale(0.5, 0.5);
+	-ms-transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
+	top: 10em;
+}
+
+form {
+	font-family: 'Roboto', sans-serif;
+}
+
+#group_list{
+	font-family: 'Roboto', sans-serif;
+}
+
+#student_list{
+		font-family: 'Roboto', sans-serif;
+}
+
+
+  .clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

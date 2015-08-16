@@ -1,16 +1,25 @@
 <!-- view for homepage -->
+<div id="logo"
+	<a href="http://imgur.com/IC0hEnt"><img src="http://i.imgur.com/IC0hEnt.png" title="source: imgur.com" /></a>
+</div>
 
-<h1> Roster </h1>
-
+<div id="login_info">
 <button id="student_login"> <a href="/events">Students</a> </button>
 <button id="create_user"> <a href="/create">Create Organizer </a></button>
 
-<p>Login</p>
+<p>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+	Login
+	</p>
 <form id="login_form" action="/sessions" method="post">
 <input type="text" name="username" placeholder="Username"> <br>
 <input type="password" name="password" placeholder="Password"> <br>
 <input type="submit" value="Login">
 </form>
+</div>
+
+
+
 
 
 <% if @errors %>
