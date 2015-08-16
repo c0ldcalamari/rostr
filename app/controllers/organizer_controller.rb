@@ -50,19 +50,24 @@ get '/user/:id' do
 end
 
 post '/user/:id/create' do
-  event = Event.create(title: params[:title], active: false)
+  event = current_user.events.create(title: params[:title], active: false)
+  @subject_names = []
+  @subject_names[0] = params[:subject1]
+  @subject_names[1] = params[:subject2]
+  @subject_names[2] = params[:subject3]
+  @subject_names[3] = params[:subject4]
+  @subject_names[4] = params[:subject5]
 
-  event.categories.create(name: params[:subject1], category: 1)
-  event.categories.create(name: params[:subject2], category: 2)
-  event.categories.create(name: params[:subject3], category: 3)
-  event.categories.create(name: params[:subject4], category: 4)
-  event.categories.create(name: params[:subject5], category: 5)
 
-  redirect '/user/#{current_user.id}'
+  redirect "/user/#{current_user.id}/event/#{event.id}"
 end
 
 
-
+get '/user/:user_id/event/:id' do
+  @students = Student.where(event_id: params[:id])
+  @event = Event.find_by(id: params[:id])
+  erb :"organizers/start"
+end
 
 
 
