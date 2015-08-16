@@ -15,7 +15,7 @@ end
 
 # login for the organizer
 post '/sessions' do
-  user = User.find_by(username: params[:username])
+  user = Organizer.find_by(username: params[:username])
 
   if user && user.password == params[:password]
     login(user)
@@ -33,16 +33,42 @@ end
 
 #creates a user to database
 post '/user' do
-  user = User.create(username: params[:username], password: params[:password])
+  user = Organizer.create(username: params[:username], password: params[:password])
   login(user)
   redirect "/user/#{user.id}"
 end
 
+# *********************
 # organizer dashboard profile page
 get '/user/:id' do
   if logged_in?
-    erb :"organizer/show"
+    @events = Event.where(organizer_id: params[:id])
+    erb :"organizers/show"
   else
     redirect '/'
   end
 end
+
+post '/user/:id/create' do
+  event = Event.create(title: params[:title], active: false)
+
+  event.categories.create(name: params[:subject1], category: 1)
+  event.categories.create(name: params[:subject2], category: 2)
+  event.categories.create(name: params[:subject3], category: 3)
+  event.categories.create(name: params[:subject4], category: 4)
+  event.categories.create(name: params[:subject5], category: 5)
+
+  redirect '/user/#{current_user.id}'
+end
+
+
+
+
+
+
+
+
+
+
+
+
