@@ -47,35 +47,57 @@ def evaluate_skill_points(students)
 
     if [*12..15].include?(student_points)
       high << student
-    elsif [*1..8].include?(student_points)
+    elsif [*1..7].include?(student_points)
       low << student
     else
       mid << student
     end
   end
 
-
-  p "*"*80
-  ap high.length
-  p "*"*80
   ap low.length
-  p "*"*80
-  ap mid.length
-
-
   groups = Array.new(10){ Array.new() }
 
+  i = 0
+  until low.empty?
+    groups[i] << low.shift
+    i+=1
+    i = 0 if i == 10
+  end
 
+  until high.empty?
+    groups[i] << high.shift
+    i+=1
+    i = 0 if i == 10
+  end
+
+  groups.each do |group|
+    diff = 5 - group.length
+    group << mid.shift(diff)
+    group.flatten!
+  end
+
+  groups.each_with_index do |group, i|
+    group.each do |student|
+      student.update_attributes(group_id: i)
+    end
+  end
 
 end
 
-def zip_prep
-#before zipping
-# i want to sort the high array by skill_points with students names
-  # highest to lowest
-# i want to sort the low array by skill_ points with students names
-  # lowest to highest
-end
+# def even_out(low, med, high)
+#   diff = low - high
+#   diff.abs
+
+#   if low.length  == high.length
+#     break
+#   elsif low.length > high.length
+#     diff.times{ high << med.pop }
+#   else
+#     diff.times{ low << med.pop }
+#   end
+
+
+# end
 
 # master_dis_arr = []
 
