@@ -1,0 +1,8 @@
+<h1> <%= @group.name %> </h1>
+  <ul>
+  <% @group.students.each do |student| %>
+    <li>
+    <%= student.name %>
+    </li>
+  <% end %>
+<h2> [GROUP-CHAT-BOX] </h2>

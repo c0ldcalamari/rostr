@@ -9,9 +9,6 @@ get '/' do
 end
 
 # events students can see
-get '/events' do
-  erb :"events/show"
-end
 
 # login for the organizer
 post '/sessions' do
