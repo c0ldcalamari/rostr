@@ -2,9 +2,13 @@ require 'faker'
 
 user = Organizer.create(username: "admin1", password: "admin")
 Organizer.create(username: "admin2", password: "admin")
-Event.create(title: "DBC Hackathon", active: false, organizer_id: 1)
+Event.create(title: "DBC Hackathon", active: false, organizer_id: 1, sub1: "Ruby", sub2: "Javascript", sub3: "Rails", sub4: "Sinatra", sub5: "CSS/JQuery")
 Event.create(title: "Math Class", active: false, organizer_id: 2)
 
+10.times do
+  name = Faker::Team.creature
+  Group.create(name: name, event_id: 1)
+end
 
 20.times do
   name = Faker::Name.name

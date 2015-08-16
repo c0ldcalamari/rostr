@@ -1,0 +1,16 @@
+Event has started. Show all groups
+
+<div id="group_list">
+  <ol>
+  <% @groups.each do |group| %>
+      <li>
+      <%= group.name %>
+      <% group.students.each do |student|  %>
+      <ul><%= student.name %></ul>
+      <% end %>
+  <% end %>
+  </ol>
+</div>
+
+
+<!-- Add a stop event button to this page  -->

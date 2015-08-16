@@ -1,9 +1,13 @@
 <!-- organizer dashboard for all their events -->
 <p> Hi Organizer</p>
 
+    <form id="logout_button" method="get" action="/logout">
+    <input type="submit" value="Logout">
+    </form>
+
 <% @events.each do |event|  %>
 <ul>
-    <%= event.title %>
+    <a href="/user/<%= current_user.id %>/event/<%= event.id %>"><%= event.title %></a>
 </ul>
 <% end %>
 
