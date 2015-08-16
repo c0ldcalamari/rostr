@@ -6,11 +6,22 @@ Event has started. Show all groups
       <li>
       <%= group.name %>
       <% group.students.each do |student|  %>
-      <ul><%= student.name %></ul>
+      <ul>
+        <li><%= student.name %>
+      <div class="base" </div>
+    <% student.categories.each do |category| %>
+      <% if category.rating == "advanced" %>
+        <div class="advanced"> </div>
+      <% end %>
+    <% end %>
+  </li><br>
+    </ul>
       <% end %>
   <% end %>
   </ol>
 </div>
 
-
+<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
+<input type="submit" value="Start Event">
+</form>
 <!-- Add a stop event button to this page  -->

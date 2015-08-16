@@ -26,6 +26,7 @@ post '/events/:event_id/groups/:group_id' do
 end
 
 get '/events/:event_id/groups/:group_id' do
+  @event = Event.find_by(id: params[:event_id])
   @group = Group.find_by(id: params[:group_id])
    erb :"groups/show"
 end
