@@ -87,6 +87,7 @@ post '/user/:user_id/event/:event_id' do
   @groups = Group.where(event_id: params[:event_id])
 
   redirect "/user/#{params[:user_id]}"
+
 end
 
 # redirect to the admin group page
