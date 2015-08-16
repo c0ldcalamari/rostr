@@ -8,19 +8,19 @@ get '/events/:id' do
   erb :"/events/show"
 end
 
-# post '/events/:id' do
-
-#   if
-  # redirect 'events/#{params[:id]}/groups/:group_id'
-#   else
-
-#   end
-# end
-
-
 post '/events/:event_id/groups/:group_id' do
   @group = Group.find_by(id: params[:group_id])
-  redirect "/events/#{params[:event_id]}/groups/#{params[:group_id]}"
+  @event = Event.find_by(id: params[:event_id])
+  emails = []
+  @group.students.each do |student|
+    emails << student.password
+  end
+  if emails.include?(params[:password])
+    redirect "/events/#{params[:event_id]}/groups/#{params[:group_id]}"
+  else
+    @incorrect_password = "Incorrect Password"
+    erb :"/events/show"
+  end
 end
 
 get '/events/:event_id/groups/:group_id' do
