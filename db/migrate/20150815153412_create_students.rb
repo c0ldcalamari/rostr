@@ -3,6 +3,7 @@ class CreateStudents < ActiveRecord::Migration
       create_table :students do |t|
       t.string :name
       t.string :email
+      t.integer :points
       t.integer :event_id
 
       t.references :group
