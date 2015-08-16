@@ -1,13 +1,13 @@
-require 'sinatra'
-require 'pusher'
-require 'json'
+
+# require 'pusher'
+# require 'json'
 
 require_relative 'activity'
 require_relative 'config'
 
 include Rack::Utils
 
-set :public_folder, '../'
+# set :public_folder, '../'
 
 get '/' do
   File.read('../index.html')
