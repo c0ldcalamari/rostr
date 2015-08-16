@@ -40,6 +40,8 @@ def advance_sorter(student_event)
     advance_sorted[5] << student if stars.size == 0
 
   end
+
+  # ap advance_sorted[0]
   return advance_sorted
 end
 

@@ -64,7 +64,12 @@ get '/user/:user_id/event/:event_id' do
   @students = Student.where(event_id: params[:event_id])
   @event = Event.find_by(id: params[:event_id])
 
+  # sorted_students = advance_sorter(@students)
+  # quick_sort(sorted_students)
 
+  # calculate_student_points(@students)
+
+  evaluate_skill_points(@students)
 
   erb :"organizers/start"
 end
@@ -74,8 +79,8 @@ post '/user/:user_id/event/:event_id' do
   event = Event.find(params[:event_id])
   event.update_attributes(active: true)
 
-  sorted_students = advance_sorter(@students)
-  #brenda's algorithm
+  #algorithm goes here
+
 
   redirect "/user/#{current_user.id}/event/#{event.id}/groups"
 end

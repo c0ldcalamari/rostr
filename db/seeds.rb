@@ -16,7 +16,7 @@ end
 50.times do
   rates = ["beginner", "intermediate", "advanced"]
   name = Faker::Name.name
-  student = Student.create(name: name, email: "a", event_id: 1)
+  student = Student.create(name: name, email: "a", points: 0, event_id: 1)
 
   student.categories.create(name: "Ruby", rating: rates.sample, subject: 1, event_id: 1)
   student.categories.create(name: "Javascript", rating: rates.sample, subject: 2, event_id: 1)
