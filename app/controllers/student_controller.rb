@@ -1,3 +1,5 @@
+require_relative 'config'
+
 get '/events' do
   @events = Event.all
   erb :"events/index"
@@ -35,6 +37,9 @@ get '/events/:event_id/category' do
 end
 
 post '/events/:event_id/category' do
+  Pusher['admin-page'].trigger('user-signup', {
+    message: params[:name]
+  })
   event = Event.find_by(id: params[:event_id])
   student = event.students.create(name: params[:name], email: params[:email])
   student.categories.create(name: event.sub1, rating: params[:rate1], subject: 1, event_id: params[:event_id])
@@ -42,6 +47,7 @@ post '/events/:event_id/category' do
   student.categories.create(name: event.sub3, rating: params[:rate3], subject: 3, event_id: params[:event_id])
   student.categories.create(name: event.sub4, rating: params[:rate4], subject: 4, event_id: params[:event_id])
   student.categories.create(name: event.sub5, rating: params[:rate5], subject: 5, event_id: params[:event_id])
+
   redirect '/success'
 end
 

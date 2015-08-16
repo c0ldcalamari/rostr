@@ -64,7 +64,7 @@ get '/user/:user_id/event/:event_id' do
   @students = Student.where(event_id: params[:event_id])
   @event = Event.find_by(id: params[:event_id])
 
-
+  #if user signs up, make an ajax call
 
   erb :"organizers/start"
 end
