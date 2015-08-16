@@ -9,9 +9,9 @@ include Rack::Utils
 
 # set :public_folder, '../'
 
-get '/' do
-  File.read('../index.html')
-end
+# get '/' do
+#   File.read('../index.html')
+# end
 
 post '/chat' do
   chat_info = params[:chat_info]

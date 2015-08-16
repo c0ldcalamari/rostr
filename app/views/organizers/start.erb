@@ -9,8 +9,11 @@
   </ol>
 </div>
 
-<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
-<input type="submit" value="START EVENT">
+
+<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>/groups/create" method="post">
+<input type="submit" value="Create Groups">
 </form>
 
-
+<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
+<input type="submit" value="Start Event">
+</form>

@@ -6,7 +6,17 @@ Event has started. Show all groups
       <li>
       <%= group.name %>
       <% group.students.each do |student|  %>
-      <ul><%= student.name %></ul>
+      <ul>
+        <li><%= student.name %>
+
+      <div class="base" </div>
+    <% student.categories.each do |category| %>
+      <% if category.rating == "advanced" %>
+        <div class="advanced"> </div>
+      <% end %>
+    <% end %>
+  </li><br>
+    </ul>
       <% end %>
   <% end %>
   </ol>

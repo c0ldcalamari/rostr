@@ -66,13 +66,18 @@ get '/user/:user_id/event/:event_id' do
   erb :"organizers/start"
 end
 
+post '/user/:user_id/event/:event_id/groups/create' do
+  @students = Student.where(event_id: params[:event_id])
+  @event = Event.find_by(id: params[:event_id])
+  # sorted_students = advance_sorter(@students)
+  #brenda's algorithm
+  erb :"organizers/start"
+end
+
 # changes inactive event to ACTIVE
 post '/user/:user_id/event/:event_id' do
   event = Event.find(params[:event_id])
   event.update_attributes(active: true)
-
-  # sorted_students = advance_sorter(@students)
-  #brenda's algorithm
 
   redirect "/user/#{current_user.id}/event/#{event.id}/groups"
 end

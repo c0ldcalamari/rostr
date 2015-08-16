@@ -3,10 +3,16 @@
   <% @group.students.each do |student| %>
     <li>
     <%= student.name %>
-    </li>
+    <div class="base" </div>
+    <% student.categories.each do |category| %>
+      <% if category.rating == "advanced" %>
+        <div class="advanced"> </div>
+      <% end %>
+    <% end %>
+    </li><br>
   <% end %>
   <p><%= @event.description %> </p>
-<h2> [GROUP-CHAT-BOX] </h2>
+
   <section class="realtime-chat">
     <div class="span5" id="pusher_chat_widget"></div>
   </section>
