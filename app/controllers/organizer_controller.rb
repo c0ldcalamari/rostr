@@ -9,13 +9,10 @@ get '/' do
 end
 
 # events students can see
-get '/events' do
-  erb :"events/show"
-end
 
 # login for the organizer
 post '/sessions' do
-  user = User.find_by(username: params[:username])
+  user = Organizer.find_by(username: params[:username])
 
   if user && user.password == params[:password]
     login(user)
@@ -33,16 +30,47 @@ end
 
 #creates a user to database
 post '/user' do
-  user = User.create(username: params[:username], password: params[:password])
+  user = Organizer.create(username: params[:username], password: params[:password])
   login(user)
   redirect "/user/#{user.id}"
 end
 
+# *********************
 # organizer dashboard profile page
 get '/user/:id' do
   if logged_in?
-    erb :"organizer/show"
+    @events = Event.where(organizer_id: params[:id])
+    erb :"organizers/show"
   else
     redirect '/'
   end
 end
+
+post '/user/:id/create' do
+  event = current_user.events.create(title: params[:title], active: false)
+  @subject_names = []
+  @subject_names[0] = params[:subject1]
+  @subject_names[1] = params[:subject2]
+  @subject_names[2] = params[:subject3]
+  @subject_names[3] = params[:subject4]
+  @subject_names[4] = params[:subject5]
+
+
+  redirect "/user/#{current_user.id}/event/#{event.id}"
+end
+
+
+get '/user/:user_id/event/:id' do
+  @students = Student.where(event_id: params[:id])
+  @event = Event.find_by(id: params[:id])
+  erb :"organizers/start"
+end
+
+
+
+
+
+
+
+
+
