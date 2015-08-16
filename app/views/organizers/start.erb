@@ -1,0 +1,14 @@
+<!-- organizer starts the event -->
+
+<%= @event.title %>
+<% @students.each do |student| %>
+<ul>
+<%= student.name  %>
+</ul>
+<% end %>
+
+<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="get">
+
+
+
+</form>
