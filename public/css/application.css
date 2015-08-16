@@ -2,3 +2,15 @@ input[type="radio"] {
   margin-left: 1em;
   margin-right: 1%;
 }
+
+.advanced {
+  padding-right: 1em;
+  background-color: green;
+  display: inline;
+}
+
+.base {
+  padding-left: 1em;
+  background-color: green;
+  display: inline;
+}

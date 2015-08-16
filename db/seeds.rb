@@ -13,7 +13,7 @@ Event.create(title: "Biology101 - Field Studies Project", active: false, organiz
 end
 
 # create some students
-50.times do
+48.times do
   rates = ["beginner", "intermediate", "advanced"]
   name = Faker::Name.name
   student = Student.create(name: name, email: "a", points: 0, event_id: 1)
@@ -25,9 +25,4 @@ end
   student.categories.create(name: "JQuery", rating: rates.sample, subject: 5, event_id: 1)
 end
 
-student1 = Student.create(name: "Alex", email: "a", event_id: 1)
-student1.categories.create(name: "Ruby", rating: "advanced", subject: 1, event_id: 1)
-student1.categories.create(name: "Javascript", rating: "advanced", subject: 2, event_id: 1)
-student1.categories.create(name: "Sinatra", rating: "advanced", subject: 3, event_id: 1)
-student1.categories.create(name: "Rails", rating: "advanced", subject: 4, event_id: 1)
-student1.categories.create(name: "JQuery", rating: "advanced", subject: 5, event_id: 1)
+
