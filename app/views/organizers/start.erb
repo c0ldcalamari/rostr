@@ -1,5 +1,5 @@
 <!-- organizer starts the event -->
-
+<!-- ajax the student auto updates -->
 <%= @event.title %>
 <div id="student_list">
   <ol>
@@ -12,3 +12,5 @@
 <form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
 <input type="submit" value="START EVENT">
 </form>
+
+
