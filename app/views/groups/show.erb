@@ -3,12 +3,7 @@
   <% @group.students.each do |student| %>
     <li>
     <%= student.name %>
-    <div class="base" </div>
-    <% student.categories.each do |category| %>
-      <% if category.rating == "advanced" %>
-        <div class="advanced"> </div>
-      <% end %>
-    <% end %>
+
     </li><br>
   <% end %>
   <p><%= @event.description %> </p>
