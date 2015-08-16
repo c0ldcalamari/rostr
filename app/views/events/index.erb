@@ -1,9 +1,14 @@
 <!-- students see these events -->
 <h1> Events In Your Area </h1>
 <% @events.each do |event| %>
+  <ul>
+    <li>
   <% if event.active %>
     <a href= "/events/<%=event.id%>" ><%= event.title %></a>
   <% else %>
-    <a href= "/events/<%=event.id%>/create"><%= event.title %> </a>
+
+    <a href= "/events/<%=event.id%>/category"><%= event.title %> </a> <br><br>
   <% end %>
+    </li>
+  </ul>
 <% end %>

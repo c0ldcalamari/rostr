@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :group
-  has_many :criteria_students
-  has_many :criterias, through: :criteria_students
+  belongs_to :event
+  has_many :category_students
+  has_many :categories, through: :category_students
 end
