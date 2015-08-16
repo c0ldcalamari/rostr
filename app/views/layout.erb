@@ -11,15 +11,27 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <link rel="stylesheet/less" type="text/css" href="lib/twitter-bootstrap/lib/bootstrap.less">
+    <script src="lib/less/less-1.1.5.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-  <script src="pusher-realtime-chat-widget/src/js/PusherChatWidget.js"></script>
-  <link href="pusher-realtime-chat-widget/src/pusher-chat.css" rel="stylesheet" />
+  <script src="/js/PusherChatWidget.js"></script>
+  <link href="/css/pusher-chat-widget.css" rel="stylesheet" />
 
   <title></title>
 </head>
 <body>
   <%= yield %>
+  <script>
+      $(function() {
+        var pusher = new Pusher("b4f422cbaf69c5be930b")
+        var chatWidget = new PusherChatWidget(pusher, {
+          appendTo: "#pusher_chat_widget",
+          chatEndPoint: "pusher-realtime-chat-widget/src/ruby-sinatra/chat.rb"
+        });
+      });
+    </script>
 </body>
 </html>
