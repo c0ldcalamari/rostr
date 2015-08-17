@@ -63,7 +63,10 @@ end
 get '/user/:user_id/event/:event_id' do
   @students = Student.where(event_id: params[:event_id])
   @event = Event.find_by(id: params[:event_id])
-  @groups = @groups = Group.where(event_id: params[:event_id])
+  @groups = Group.where(event_id: params[:event_id])
+
+  calculate_student_points(@students)
+  evaluate_skill_points(@students)
 
   erb :"organizers/start"
 end
@@ -82,7 +85,9 @@ post '/user/:user_id/event/:event_id' do
   event = Event.find(params[:event_id])
   event.update_attributes(active: true)
   @groups = Group.where(event_id: params[:event_id])
+
   redirect "/user/#{params[:user_id]}"
+
 end
 
 # redirect to the admin group page

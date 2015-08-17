@@ -36,6 +36,10 @@
           appendTo: "#pusher_chat_widget",
           chatEndPoint: "/chat"
         });
+        var channel = pusher.subscribe('admin-page');
+        channel.bind('user-signup', function(data) {
+          $("#student_list ol").append('<li>'+data.message+'</li>')
+        });
       });
   //   </script>
 </body>

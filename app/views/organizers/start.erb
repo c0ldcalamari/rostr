@@ -1,6 +1,7 @@
 <!-- organizer starts the event -->
 <!-- ajax the student auto updates -->
 <h1><%= @event.title %> </h1>
+
 <div id="student_list">
   <ol>
   <% @students.each do |student| %>
@@ -13,6 +14,3 @@
 <input type="submit" value="Create Groups">
 </form>
 
-<!-- form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
-<input type="submit" value="Start Event">
-</form> -->
