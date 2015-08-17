@@ -36,8 +36,6 @@ def calculate_student_points (all_students)
   end
 end
 
-
-
 def evaluate_skill_points(students)
     high = []
     mid = []
