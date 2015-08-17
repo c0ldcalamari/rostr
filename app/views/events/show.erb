@@ -2,7 +2,7 @@
 
 <% @event.groups.each do |group| %>
   <%= group.name %>
-  <ul>
+  <ul id="groups">
   <% group.students.each do |student| %>
     <li>
     <%= student.name %>

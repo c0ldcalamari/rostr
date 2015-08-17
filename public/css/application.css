@@ -1,3 +1,80 @@
+ html {
+  background-color: #cdd2dd;
+  font-family: 'Roboto', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-image: url("http://i.imgur.com/VrkNcUp.png");
+    background-repeat: no-repeat;
+    }
+
+#login{
+  text-align: center;
+}
+
+#create_user_form{
+  text-align: center;
+}
+
+#create_event_form{
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+ol li {
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul li {
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+}
+
+#start_event{
+  text-align: center;
+}
+
+#groups li {
+  text-align: left;
+}
+
+#groups {
+  font-size: large;
+}
+
+#student_list{
+  text-align: left;
+}
+
+#group_list{
+
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  font-family: 'Roboto', sans-serif;
+
+}
+
 input[type="radio"] {
   margin-left: 1em;
   margin-right: 1%;
@@ -14,3 +91,37 @@ input[type="radio"] {
   background-color: green;
   display: inline;
 }
+
+
+
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+
+  }
+
+
+
+
+ #logo {
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 20px;
+   width: 600px;
+ }
+
+.clearfix:after {
+  visibility: hidden;
+   display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
