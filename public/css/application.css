@@ -1,3 +1,6 @@
+.debug {border: 1px red solid;}
+.form {display: none;}
+
 .logo {
   background-image: url('../images/rostr_logo.png');
   height: 325px;
