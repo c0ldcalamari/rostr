@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
+  <!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -11,36 +11,13 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-  <link rel="stylesheet/less" type="text/css" href="lib/twitter-bootstrap/lib/bootstrap.less">
-    <script src="lib/less/less-1.1.5.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <script src="/js/PusherChatWidget.js"></script>
-  <link href="/css/pusher-chat-widget.css" rel="stylesheet" />
-
-  <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
-<script src="semantic/dist/semantic.min.js"></script>
-<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <title></title>
 </head>
 <body>
   <%= yield %>
-   <script>
-      $(function() {
-        var pusher = new Pusher("b4f422cbaf69c5be930b")
-        var chatWidget = new PusherChatWidget(pusher, {
-          appendTo: "#pusher_chat_widget",
-          chatEndPoint: "/chat"
-        });
-        var channel = pusher.subscribe('admin-page');
-        channel.bind('user-signup', function(data) {
-          $("#student_list ol").append('<li>'+data.message+'</li>')
-        });
-      });
-  //   </script>
 </body>
 </html>

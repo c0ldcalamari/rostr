@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 # PostgreSQL driver
 gem 'pg'
@@ -8,15 +8,11 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 
-gem 'pusher'
-gem 'uuid'
-gem 'json'
-
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
-gem 'awesome_print'
 gem 'rake'
+
 gem 'shotgun'
 
 group :test do
