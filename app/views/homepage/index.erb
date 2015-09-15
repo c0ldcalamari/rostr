@@ -1,0 +1,32 @@
+<div class="debug logo col span-12-d "></div>
+
+<div id="organizer-login">
+  <p>Organizer</p>
+  <button id="login" class="button btn-g">Login</button>
+    <form action="/sessions" method="post" id="login-form" class="form">
+    <p>Login</p>
+      <input type="text" name="email" placeholder="email"> <br>
+      <input type="password" name="password" placeholder="Password"> <br>
+      <input type="submit" value="Login" class="btn-g">
+      <button class="btn-g cancel">Cancel</button>
+    </form>
+
+  <button id="signup" class="button btn-g">Sign Up</button>
+  <form action="/organizers" method="post" id="signup-form" class="form" >
+    <p>Sign Up</p>
+    <input type="text" name="name" placeholder="name"> <br>
+    <input type="text" name="email" placeholder="email"> <br>
+    <input type="password" name="password" placeholder="Password"> <br>
+    <input type="submit" value="Create" class="btn-g">
+    <button class="btn-g cancel">Cancel</button>
+  </form>
+</div>
+
+<div>
+  <p>Events</p>
+  <button class="btn-g"> <a href="/events">Participants</a> </button>
+</div>
+
+<% if @errors %>
+  <p><%=@errors[:login_error]%></p>
+<% end %>
