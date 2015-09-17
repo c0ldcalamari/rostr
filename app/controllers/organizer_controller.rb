@@ -19,7 +19,7 @@ post '/sessions' do
     redirect "/user/#{user.id}"
   else
     @errors = {login_error: "Username and/or password are incorrect. Try Again."}
-    erb :"/"
+    erb :"/organizers/home"
   end
 end
 
