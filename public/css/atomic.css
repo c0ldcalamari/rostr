@@ -83,14 +83,19 @@
 .bg-gray {background-color: #6C7A89; }
 .bg-silver {background-color: #BDC3C7; }
 .bg-yellow {background-color: #F5AB35; }
-.bg-green {background-color: #1BBC9B; }
 .bg-white { background-color: rgba(255, 255, 255, 0.75); }
 .bg-black { background-color: rgba(0, 0, 0, 0.7); }
 .bg-black { background-color: rgba(0, 0, 0, 0.7); }
+
+.bg-green {background-color: #1BBC9B; }
 .bg-greena { background-color: rgba(27,188,155,0.67);}
+.bg-pink {background-color: ;}
+.bg-gray {background-color: ;}
+.bg-blue {background-color: ;}
 
 .c-white {color: white;}
 .c-green {color: green;}
+
 
 
 
