@@ -12,11 +12,11 @@ end
 
 # login for the organizer
 post '/sessions' do
-  user = Organizer.find_by(username: params[:username])
+  @user = Organizer.find_by(username: params[:username])
 
-  if user && user.password == params[:password]
-    login(user)
-    redirect "/user/#{user.id}"
+  if @user && @user.password == params[:password]
+    login(@user)
+    redirect "/user/#{@user.id}"
   else
     @errors = {login_error: "Username and/or password are incorrect. Try Again."}
     erb :"/organizers/home"
@@ -30,7 +30,7 @@ end
 
 #creates a user to database
 post '/user' do
-  user = Organizer.create(username: params[:username], password: params[:password])
+  @user = Organizer.create(username: params[:username], password: params[:password])
   login(user)
   redirect "/user/#{user.id}"
 end
@@ -39,6 +39,7 @@ end
 # organizer dashboard profile page
 get '/user/:id' do
   if logged_in?
+    @user = Organizer.find(current_user.id)
     @events = Event.where(organizer_id: params[:id])
     erb :"organizers/show"
   else

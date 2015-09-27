@@ -1,27 +1,57 @@
 
 <!-- organizer dashboard for all their events -->
+<div class="container ta-cen">
+
+  <h1>Welcome <%=@user.username%></h1>
 
 
-<h1> Hi Organizer</h1>
+  <div class="">
+    <h2 class="ta-l">Your Events</h2>
 
-<% @events.each do |event|  %>
-<ul>
-    <a href="/user/<%= current_user.id %>/event/<%= event.id %>"><%= event.title %></a>
-</ul>
-<% end %>
+    <table class="pure-table pure-table-horizontal">
+      <thead>
+          <tr>
+              <th class="ta-cen">Title</th>
+              <th class="ta-cen">Description</th>
+              <th class="ta-cen">Status</th>
+              <th class="ta-cen">Created at</th>
+              <th class="ta-cen"></th>
+              <th class="ta-cen"></th>
+          </tr>
+      </thead>
 
-<form id="create_event_form" action="/user/<%=current_user.id %>/create" method="post">
-  <input type="text" name="title" placeholder="Event Title" class="w-20"><br>
-  <input type="textarea" name="description" placeholder="Event Description" class="h-5 w-20"><br>
-  <input type="text" name="subject1" placeholder="Subject 1"> <br>
-  <input type="text" name="subject2" placeholder="Subject 2"> <br>
-  <input type="text" name="subject3" placeholder="Subject 3"> <br>
-  <input type="text" name="subject4" placeholder="Subject 4"> <br>
-  <input type="text" name="subject5" placeholder="Subject 5"> <br>
-  <input type="submit" value="Create Event">
-</form>
+      <tbody>
+        <% @events.each do |event|  %>
+          <tr>
+              <td><a href="/events/<%=event.id%>"><%= event.title%></a></td>
+              <td><%= event.description%></td>
+              <td>
+                <% if event.created %>
+                    <i class="fa fa-calendar-plus-o c-blue"></i>
+                    <% event.update_attributes(:started => false, :finished => false)%>
+                <% elsif event.started%>
+                    <i class="fa fa-calendar-check-o c-green"></i>
+                    <% event.update_attributes(:created => false, :finished => false)%>
+                <% else %>
+                    <i class="fa fa-calendar-times-o c-red"></i>
+                    <% event.update_attributes(:created => false, :started => false, :finished => true)%>
+                <%end%>
+              </td>
+              <td><%= event.created_at%></td>
+              <td><i class="fa fa-trash"></i></td>
+              <td><i class="fa fa-pencil-square-o"></i></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-
-<form id="logout_button" method="get" action="/logout">
-  <input type="submit" value="Logout">
-</form>
+  <div class="legend ta-r mt-1">
+    <span class="m-1"><i class="fa fa-calendar-plus-o c-blue"></i> Event has been created</span>
+    <span class="m-1"><i class="fa fa-calendar-check-o c-green"></i> Event has started</span>
+    <span class="m-1"><i class="fa fa-calendar-times-o c-red"></i> Event is finished</span>
+  <div>
+  <form action="#" class="ta-l">
+    <input type="submit" value="New Event" class="pure-button pure-button-primary ta-l">
+  </form>
+  </div>
+</div>
