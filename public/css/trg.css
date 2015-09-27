@@ -142,9 +142,8 @@
     .gutters-d .span-10-d { width: 83%; }
     .gutters-d .span-11-d { width: 91.5%; }
     .gutters-d .span-12-d { width: 100%; }
+    .gutters-d .span-13-d { width: 150%; }
 }
-
-.debug { border: solid 1px red; }
 
 .back {
     z-index: -1;

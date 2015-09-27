@@ -1,13 +1,36 @@
-<h1> <%= @group.name %> </h1>
-  <ul>
-  <% @group.students.each do |student| %>
-    <li>
-    <%= student.name %>
+<script>
+   $(function() {
+     var pusher = new Pusher("b4f422cbaf69c5be930b")
+     var chatWidget = new PusherChatWidget(pusher, {
+       appendTo: "#pusher_chat_widget",
+       chatEndPoint: "/chat"
+     });
+     var channel = pusher.subscribe('admin-page');
+     channel.bind('user-signup', function(data) {
+       $("#student_list ol").append('<li>'+data.message+'</li>')
+     });
+   });
+</script>
 
-    </li><br>
-  <% end %>
-  <p><%= @event.description %> </p>
+<div class="debug container">
+    <div class="debug row span-12-d ma-0 ta-cen bg-gray padt-1 br-5">
+      <h1><%= @event.title %></h1>
+      <p><%= @event.description %></p>
+    </div>
 
-  <section class="realtime-chat">
-    <div class="span5" id="pusher_chat_widget"></div>
-  </section>
+  <div class="debug col span-6-d bg-green h-30 ta-cen padt-3">
+    <h1 class="uline"><%= @group.name.capitalize %></h1>
+      <% @group.students.each do |student| %>
+      <ul class="padr-2">
+        <p><%= student.name %></p>
+      </ul>
+      <% end %>
+  </div>
+
+   <div class="debug col span-6-d bg-greena h-30 padl-3 padt-3">
+      <section class="realtime-chat">
+        <div class="span5" id="pusher_chat_widget"></div>
+    </section>
+  </div>
+
+</div>

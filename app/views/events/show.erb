@@ -1,28 +1,36 @@
 <% @show_nav = true %>
 
+<div class="container debug">
+
+
 <div class="debug row span-12-d ta-cen">
   <h1><%= @event.title %></h1>
   <p><%= @event.description %></p>
 </div>
 
-<!-- <div class="debug col span-12-d"> -->
-<div class="debug container span-12-d">
-    <% @event.groups.each do |group| %>
-    <div class="debug col span-3-d ta-cen padt-2 padb-2">
-      <ul id="groups">
-        <h2 class="uline"><%= group.name %></h2>
-        <% group.students.each do |student| %>
-          <p><%= student.name %></p>
-        <% end %>
-      </ul>
 
-      <form action="/events/<%=@event.id%>/groups/<%=group.id%>" method="post">
-        <input type="submit" value="Enter Group" class="pure-button pure-button-primary ml-2">
-      </form>
-    </div>
-    <%end%>
+  <div class="debug row span-12-d ma-0 ta-cen bg-gray padt-1 br-5">
+    <h1><%= @event.title %></h1>
+    <p><%= @event.description %></p>
+  </div>
+
+  <div class="debug span-12-d">
+      <% @event.groups.each_with_index do |group,i| %>
+      <% color= (i%2==0) ? "bg-green" : "bg-greena" %>
+      <div class="debug col span-3-d ta-cen padb-2 padr-2 br-5 m-4p <%= color %>">
+        <ul id="groups">
+          <h2 class="uline"><%= group.name.capitalize %></h2>
+          <% group.students.each do |student| %>
+            <p><%= student.name %></p>
+          <% end %>
+        </ul>
+        <form action="/events/<%=@event.id%>/groups/<%=group.id%>" method="post">
+          <input type="submit" value="Enter Group" class="pure-button pure-button-primary ml-2">
+        </form>
+      </div>
+      <%end%>
+  </div>
+
 </div>
-<!-- </div> -->
-
 
   <%= @incorrect_password %>

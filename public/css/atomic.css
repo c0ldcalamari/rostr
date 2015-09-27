@@ -30,6 +30,7 @@
 /*borders*/
 .bd-1w {border: 1px solid white;}
 .bd-1b {border: 1px solid black;}
+.bd-1g {border: 1px solid #404040;}
 .bd-5w {border: 5px solid white;}
 .br-5 {border-radius: 5px;}
 
@@ -90,8 +91,8 @@
 
 .bg-green {background-color: #1BBC9B; }
 .bg-greena { background-color: rgba(27,188,155,0.67);}
-.bg-pink {background-color: ;}
-.bg-gray {background-color: ;}
+.bg-pink {background-color: #E85D75;}
+.bg-gray {background-color: #C1C1C1;}
 .bg-blue {background-color: #111D74;}
 
 .c-white {color: white;}
@@ -104,6 +105,9 @@
 
 
 /*margins*/
+.ma-0 {margin: 0 auto;
+}
+.m-4p {margin: 4.1%;}
 .m-1 {margin: 1em;}
 .m-2 {margin: 2em;}
 .m-3 {margin: 3em;}
