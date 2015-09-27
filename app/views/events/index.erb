@@ -1,16 +1,28 @@
-<body style="background-color: #cdd2dd">
-  <!-- students see these events -->
-<h1> Events In Your Area </h1>
-<% @events.each do |event| %>
-  <ul>
-    <li>
-  <% if event.active %>
-    <a href= "/events/<%=event.id%>" ><%= event.title %></a>
-  <% else %>
+<div class="container debug">
 
-    <a href= "/events/<%=event.id%>/category"><%= event.title %> </a> <br><br>
-  <% end %>
-    </li>
-  </ul>
-<% end %>
-</body>
+
+  <div class="debug col span-6-d">
+    <h1>Events</h1>
+    <% @active.each do |event| %>
+      <ul>
+        <li>
+          <a href= "/events/<%=event.id%>" ><%= event.title %></a>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
+
+  <div class="debug col span-3-d">
+    <h1>Past Events</h1>
+    <% @inactive.each do |event| %>
+      <ul>
+        <li>
+          <a href= "/events/<%=event.id%>" ><%= event.title %></a>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
+
+</div>

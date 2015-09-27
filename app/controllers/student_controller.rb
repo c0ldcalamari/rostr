@@ -1,7 +1,9 @@
 require_relative 'config'
 
 get '/events' do
-  @events = Event.all
+  # separate active and inactive events
+  @active = Event.where(active: true)
+  @inactive = Event.where(active: false)
   erb :"events/index"
 end
 
