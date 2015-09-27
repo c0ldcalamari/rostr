@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="/css/atomic.css">
   <link rel="stylesheet" href="/css/trg.css">
 
-    <script src="lib/less/less-1.1.5.min.js"></script>
+
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://js.pusher.com/3.0/pusher.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -30,17 +30,17 @@
 <body>
   <%= yield %>
    <script>
-      $(function() {
-        var pusher = new Pusher("b4f422cbaf69c5be930b")
-        var chatWidget = new PusherChatWidget(pusher, {
-          appendTo: "#pusher_chat_widget",
-          chatEndPoint: "/chat"
-        });
-        var channel = pusher.subscribe('admin-page');
-        channel.bind('user-signup', function(data) {
-          $("#student_list ol").append('<li>'+data.message+'</li>')
-        });
-      });
-  //   </script>
+   //    $(function() {
+   //      var pusher = new Pusher("b4f422cbaf69c5be930b")
+   //      var chatWidget = new PusherChatWidget(pusher, {
+   //        appendTo: "#pusher_chat_widget",
+   //        chatEndPoint: "/chat"
+   //      });
+   //      var channel = pusher.subscribe('admin-page');
+   //      channel.bind('user-signup', function(data) {
+   //        $("#student_list ol").append('<li>'+data.message+'</li>')
+   //      });
+   //    });
+   //   </script>
 </body>
 </html>

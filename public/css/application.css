@@ -1,11 +1,15 @@
- html {
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*background-image: url("http://i.imgur.com/VrkNcUp.png");*/
+  background-repeat: no-repeat;
+}
+
+* {
   font-family: 'Roboto', sans-serif;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    /*background-image: url("http://i.imgur.com/VrkNcUp.png");*/
-    background-repeat: no-repeat;
-    }
+}
+
 
 #login{
   text-align: center;
@@ -17,61 +21,6 @@
 
 #create_event_form{
   text-align: center;
-}
-
-h1 {
-  text-align: center;
-  font-size: large;
-  font-family: 'Roboto', sans-serif;
-}
-
-h2 {
-  text-align: center;
-}
-
-ol li {
-  font-size: large;
-  font-family: 'Roboto', sans-serif;
-}
-
-ul li {
-  font-size: large;
-  font-family: 'Roboto', sans-serif;
-}
-
-#start_event{
-  text-align: center;
-}
-
-#groups li {
-  text-align: left;
-}
-
-#groups {
-  font-size: large;
-}
-
-#student_list{
-  text-align: left;
-}
-
-#group_list{
-
-}
-
-ul {
-  text-align: center;
-  list-style-type: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: large;
-
-}
-
-li {
-  text-align: center;
-  list-style-type: none;
-  font-family: 'Roboto', sans-serif;
-
 }
 
 input[type="radio"] {
@@ -232,5 +181,3 @@ input[type="radio"] {
   background: #336E7B;
   text-decoration: none;
 }
-
-.debug {border: 1px red solid;}

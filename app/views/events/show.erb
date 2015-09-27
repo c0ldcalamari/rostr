@@ -1,20 +1,26 @@
-<h1><%= @event.title %></h1>
-
-<% @event.groups.each do |group| %>
-  <%= group.name %>
-  <ul id="groups">
-  <% group.students.each do |student| %>
-    <li>
-    <%= student.name %>
-    </li>
-    <% end %>
-  </ul>
-
+<div class="debug row span-12-d ta-cen">
+  <h1><%= @event.title %></h1>
+  <p><%= @event.description %></p>
 </div>
-  <form action="/events/<%=@event.id%>/groups/<%=group.id%>" method = "post">
-    <!-- <input type = "text" name="email" placeholder="Email"> -->
-    <input type="submit" value="Enter Group">
-  </form><br>
-<%end%>
 
-<%= @incorrect_password %>
+<!-- <div class="debug col span-12-d"> -->
+<div class="debug container span-12-d">
+    <% @event.groups.each do |group| %>
+    <div class="debug col span-3-d ta-cen padt-2 padb-2">
+      <ul id="groups">
+        <h2 class="uline"><%= group.name %></h2>
+        <% group.students.each do |student| %>
+          <p><%= student.name %></p>
+        <% end %>
+      </ul>
+
+      <form action="/events/<%=@event.id%>/groups/<%=group.id%>" method="post">
+        <input type="submit" value="Enter Group" class="pure-button pure-button-primary ml-2">
+      </form>
+    </div>
+    <%end%>
+</div>
+<!-- </div> -->
+
+
+  <%= @incorrect_password %>
