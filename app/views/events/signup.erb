@@ -1,9 +1,9 @@
 <!-- student sign up page -->
 <h1> <%= @event.title %> </h1>
+<p><%= @event.description%></p>
 
-<%= @event.sub1 %>
-
-<form id="student_ratings" class="ui radio checkbox" action='/events/<%= @event.id %>/category' method="post">
+<form id="" class="radio checkbox" action='/events/<%= @event.id %>/category' method="post">
+  <%= @event.sub1 %>
   <input type="radio" name="rate1" value="beginner">Beginner
   <input type="radio" name="rate1" value="intermediate">Intermediate
   <input type="radio" name="rate1" value="advanced">Advanced

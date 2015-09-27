@@ -4,10 +4,6 @@
 
 <h1> Hi Organizer</h1>
 
-    <form id="logout_button" method="get" action="/logout">
-    <input type="submit" value="Logout">
-    </form>
-
 <% @events.each do |event|  %>
 <ul>
     <a href="/user/<%= current_user.id %>/event/<%= event.id %>"><%= event.title %></a>
@@ -15,13 +11,17 @@
 <% end %>
 
 <form id="create_event_form" action="/user/<%=current_user.id %>/create" method="post">
-  <input type="text" name="title" placeholder="Event Title"> <br>
-
+  <input type="text" name="title" placeholder="Event Title" class="w-20"><br>
+  <input type="textarea" name="description" placeholder="Event Description" class="h-5 w-20"><br>
   <input type="text" name="subject1" placeholder="Subject 1"> <br>
   <input type="text" name="subject2" placeholder="Subject 2"> <br>
   <input type="text" name="subject3" placeholder="Subject 3"> <br>
   <input type="text" name="subject4" placeholder="Subject 4"> <br>
   <input type="text" name="subject5" placeholder="Subject 5"> <br>
-
   <input type="submit" value="Create Event">
+</form>
+
+
+<form id="logout_button" method="get" action="/logout">
+  <input type="submit" value="Logout">
 </form>
