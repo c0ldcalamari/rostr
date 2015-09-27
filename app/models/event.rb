@@ -3,4 +3,5 @@ class Event < ActiveRecord::Base
   has_many :groups
   has_many :categories
   has_many :students
+
 end
