@@ -101,13 +101,12 @@ input[type="radio"] {
   }
 
 
-
-
  #logo {
    margin-left: auto;
    margin-right: auto;
-   padding-top: 20px;
-   width: 600px;
+   padding-top: 0px;
+   width: 100%;
+   position: absolute;
  }
 
 .clearfix:after {
@@ -164,6 +163,7 @@ input[type="radio"] {
 .h-35 {height: 35em;}
 .h-40 {height: 40em;}
 .h-45 {height: 45em;}
+.h-50 {height: 50em;}
 
 
 
