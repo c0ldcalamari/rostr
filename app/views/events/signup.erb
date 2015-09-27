@@ -1,42 +1,46 @@
-<!-- student sign up page -->
-<h1> <%= @event.title %> </h1>
-<p><%= @event.description%></p>
+<div class="debug row span-12-d">
+  <h1> <%= @event.title %> </h1>
+  <p><%= @event.description%></p>
+</div>
 
-<form id="" class="radio checkbox" action='/events/<%= @event.id %>/category' method="post">
-  <%= @event.sub1 %>
-  <input type="radio" name="rate1" value="beginner">Beginner
-  <input type="radio" name="rate1" value="intermediate">Intermediate
-  <input type="radio" name="rate1" value="advanced">Advanced
-  <br><br><br>
+<div class="debug span-12-d ta-cen">
+  <form id="" class="radio checkbox" action='/events/<%= @event.id %>/category' method="post">
+    <br><br>
+    <span class="bold fs-125"><%= @event.sub1 %>: </span>
+    <input type="radio" name="rate1" value="beginner">Beginner
+    <input type="radio" name="rate1" value="intermediate">Intermediate
+    <input type="radio" name="rate1" value="advanced">Advanced
+    <br><br><br>
 
-  <%= @event.sub2 %> <br>
-  <input type="radio" name="rate2" value="beginner">Beginner
-  <input type="radio" name="rate2" value="intermediate">Intermediate
-  <input type="radio" name="rate2" value="advanced">Advanced
-  <br><br><br>
+    <span class="bold fs-125"><%= @event.sub2 %>: </span>
+    <input type="radio" name="rate2" value="beginner">Beginner
+    <input type="radio" name="rate2" value="intermediate">Intermediate
+    <input type="radio" name="rate2" value="advanced">Advanced
+    <br><br><br>
 
-  <%= @event.sub3 %> <br>
-  <input type="radio" name="rate3" value="beginner">Beginner
-  <input type="radio" name="rate3" value="intermediate">Intermediate
-  <input type="radio" name="rate3" value="advanced">Advanced
-  <br><br><br>
+    <span class="bold fs-125"><%= @event.sub3 %>: </span>
+    <input type="radio" name="rate3" value="beginner">Beginner
+    <input type="radio" name="rate3" value="intermediate">Intermediate
+    <input type="radio" name="rate3" value="advanced">Advanced
+    <br><br><br>
 
-  <%= @event.sub4 %> <br>
-  <input type="radio" name="rate4" value="beginner">Beginner
-  <input type="radio" name="rate4" value="intermediate">Intermediate
-  <input type="radio" name="rate4" value="advanced">Advanced
-  <br><br><br>
+    <span class="bold fs-125"><%= @event.sub4 %>: </span>
+    <input type="radio" name="rate4" value="beginner">Beginner
+    <input type="radio" name="rate4" value="intermediate">Intermediate
+    <input type="radio" name="rate4" value="advanced">Advanced
+    <br><br><br>
 
-  <%= @event.sub5 %> <br>
-  <input type="radio" name="rate5" value="beginner">Beginner
-  <input type="radio" name="rate5" value="intermediate">Intermediate
-  <input type="radio" name="rate5" value="advanced">Advanced
+    <span class="bold fs-125"><%= @event.sub5 %>: </span>
+    <input type="radio" name="rate5" value="beginner">Beginner
+    <input type="radio" name="rate5" value="intermediate">Intermediate
+    <input type="radio" name="rate5" value="advanced">Advanced
 
-  <br><br><br><br>
-  <label for="name">Name</label>
-  <input type="text" name="name" placeholder="Name"><br><br>
-  <label for="email">Email</label>
-  <input type="text" name="email" placeholder="email@domain.com"><br><br>
+    <br><br><br><br>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name"><br><br>
+    <label for="email">Email</label>
+    <input type="text" name="email" placeholder="email@domain.com"><br><br>
 
-  <br><br><input type="submit" value="Submit!">
-</form>
+    <br><br><input type="submit" value="Sign-Up" class="pure-button pure-button-primary">
+  </form>
+</div>
