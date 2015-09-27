@@ -2,8 +2,9 @@ require_relative 'config'
 
 get '/events' do
   # separate active and inactive events
-  @active = Event.where(active: true)
-  @inactive = Event.where(active: false)
+  @created = Event.where(created: true)
+  @started = Event.where(started: true)
+  @finished = Event.where(finished: true)
   erb :"events/index"
 end
 

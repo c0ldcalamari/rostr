@@ -48,7 +48,7 @@ end
 
 # user creates an event
 post '/user/:id/create' do
-  event = current_user.events.create(title: params[:title], active: false)
+  event = current_user.events.create(title: params[:title], created: true)
   event.update_attributes(sub1: params[:subject1])
   event.update_attributes(sub2: params[:subject2])
   event.update_attributes(sub3: params[:subject3])
@@ -83,11 +83,11 @@ end
 post '/user/:user_id/event/:event_id' do
   @event = Event.find_by(id: params[:event_id])
   event = Event.find(params[:event_id])
-  event.update_attributes(active: true)
+  event.update_attributes(started: true)
+  event.update_attributes(created: false)
   @groups = Group.where(event_id: params[:event_id])
 
   redirect "/user/#{params[:user_id]}"
-
 end
 
 # redirect to the admin group page

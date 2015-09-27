@@ -1,24 +1,36 @@
-<div class="container debug">
-
-
-  <div class="debug col span-6-d">
+<div class="container debug h-45">
+  <div class="row span-12-d">
     <h1>Events</h1>
-    <% @active.each do |event| %>
+  </div>
+
+  <div class="debug col span-4-d">
+    <h1>Sign-Up</h1>
+    <% @created.each do |event| %>
       <ul>
         <li>
-          <a href= "/events/<%=event.id%>" ><%= event.title %></a>
+          <a href= "/events/<%=event.id%>"><%= event.title %></a>
         </li>
       </ul>
     <% end %>
   </div>
 
-
-  <div class="debug col span-6-d">
-    <h1>Past Events</h1>
-    <% @inactive.each do |event| %>
+  <div class="debug col span-4-d">
+    <h1>Started</h1>
+    <% @started.each do |event| %>
       <ul>
         <li>
-          <a href= "/events/<%=event.id%>" ><%= event.title %></a>
+          <a href= "/events/<%=event.id%>"><%= event.title %></a>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="debug col span-4-d">
+    <h1>Past</h1>
+    <% @finished.each do |event| %>
+      <ul>
+        <li>
+          <a href= "/events/<%=event.id%>"><%= event.title %></a>
         </li>
       </ul>
     <% end %>
