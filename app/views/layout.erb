@@ -27,6 +27,21 @@
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <title></title>
 </head>
+
+<% if @show_nav %>
+  <div class="pure-menu pure-menu-horizontal bg-blue ta-r">
+      <% if current_user%>
+        <a href="/user/<%=current_user.id%>" class="pure-menu-heading pure-menu-link"><%=current_user.username%></a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a href="/events" class="pure-menu-link">Events</a></li>
+          <li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Logout</a></li>
+      <%else%>
+          <li class="pure-menu-item"><a href="/" class="pure-menu-link">Sign In</a></li>
+        </ul>
+      <%end%>
+  </div>
+<% end %>
+
 <body>
   <%= yield %>
    <script>

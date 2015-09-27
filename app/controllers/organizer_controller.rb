@@ -13,7 +13,6 @@ end
 # login for the organizer
 post '/sessions' do
   @user = Organizer.find_by(username: params[:username])
-
   if @user && @user.password == params[:password]
     login(@user)
     redirect "/user/#{@user.id}"
