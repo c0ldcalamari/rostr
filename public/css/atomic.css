@@ -4,6 +4,7 @@
 /*font*/
 .ta-cen {text-align: center;}
 .ta-r {text-align: right;}
+.ta-l {text-align: left;}
 .lighter {font-weight: lighter;}
 .bold {font-weight: bold;}
 .bolder {font-weight: bolder;}
@@ -91,10 +92,13 @@
 .bg-greena { background-color: rgba(27,188,155,0.67);}
 .bg-pink {background-color: ;}
 .bg-gray {background-color: ;}
-.bg-blue {background-color: ;}
+.bg-blue {background-color: #111D74;}
 
 .c-white {color: white;}
 .c-green {color: green;}
+.c-yellow {color: yellow;}
+.c-red {color: red;}
+.c-blue {color: #111D74;}
 
 
 
