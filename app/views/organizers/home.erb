@@ -1,5 +1,4 @@
-<!-- view for homepage -->
-		<!-- <p>Login</p> -->
+
 
 <div id="logo" class="ta-cen z-10">
 	<img src="http://i.imgur.com/IC0hEnt.png">
@@ -26,10 +25,15 @@
 		</fieldset>
 	</form><br>
 
-	<form action="/create">
-		<p>Want to create an event?</p>
-		<input type="submit" value="Sign Up" class="pure-button pure-button-primary">
-	</form>
+<p>Want to create an event?</p>
+<button id="create-user-button"class="pure-button pure-button-primary button">Sign Up</button>
+<form id="create_user_form" class="form" action="/user" method="post">
+  <input type="text" name="username" placeholder="Username"> <br>
+  <input type="password" name="password" placeholder="Password"><br>
+  <input type="submit" value="Create" class="pure-button pure-button-primary">
+	<button class="pure-button pure-button-primary cancel">Cancel</button>
+</form>
+
 </div>
 
 <div class="col span-6-d h-50 bg-greena">

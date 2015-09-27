@@ -6,6 +6,7 @@ $(document).ready(function() {
   showSignup();
   showLogin();
   cancel();
+  showForm();
 });
 
 
@@ -28,5 +29,12 @@ var cancel = function(){
     event.preventDefault();
     $(".button").show();
     $(".form").hide();
+  })
+}
+
+var showForm = function(){
+  $("#create-user-button").on("click", function(event){
+    $('#create_user_form').show();
+    $(this).hide()
   })
 }
