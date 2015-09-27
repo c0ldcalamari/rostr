@@ -3,8 +3,9 @@ require 'faker'
 # admin
 user = Organizer.create(username: "Hunter", password: "admin")
 Organizer.create(username: "admin", password: "admin")
-Event.create(title: "DBC Hackathon", description: "DevBootcamp is hosting a Hackathon! August 15 - August 16th! There will be pizza and coffee, woo!", active: false, organizer_id: 1, sub1: "Ruby", sub2: "Javascript", sub3: "Rails", sub4: "Sinatra", sub5: "CSS/JQuery")
-Event.create(title: "Biology101 - Field Studies Project", active: false, organizer_id: 2)
+Event.create(title: "DBC Hackathon", description: "DevBootcamp is hosting a Hackathon! August 15 - August 16th! There will be pizza and coffee, woo!", created: true, organizer_id: 1, sub1: "Ruby", sub2: "Javascript", sub3: "Rails", sub4: "Sinatra", sub5: "CSS/JQuery")
+
+Event.create(title: "Biology101 - Field Studies Project", finished: true, organizer_id: 2)
 
 # create ten group names
 10.times do
