@@ -1,23 +1,23 @@
-<div class="container debug h-45">
-  <div class="row span-12-d ta-cen">
+<div class="container debug h-45 ">
+  <div class="row span-12-d ta-cen bg-gray padt-1 br-5 mb-">
     <h1>Events</h1>
   </div>
 
-  <div class="debug col span-4-d ta-cen">
+  <div class="debug col span-4-d ta-cen bg-green h-40 ">
     <h1>Sign-Up</h1>
     <% @created.each do |event| %>
       <p><a href= "/events/<%=event.id%>/category"><%= event.title %></a></p>
     <% end %>
   </div>
 
-  <div class="debug col span-4-d ta-cen">
+  <div class="debug col span-4-d ta-cen bg-greena h-40 ">
     <h1>Started</h1>
     <% @started.each do |event| %>
       <p><a href= "/events/<%=event.id%>"><%= event.title %></a></p>
     <% end %>
   </div>
 
-  <div class="debug col span-4-d ta-cen">
+  <div class="debug col span-4-d ta-cen bg-green h-40 ">
     <h1>Past</h1>
     <% @finished.each do |event| %>
       <p><a href= "/events/<%=event.id%>"><%= event.title %></a></p>

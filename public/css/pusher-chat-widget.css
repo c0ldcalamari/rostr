@@ -1,19 +1,19 @@
 .pusher-chat-widget {
-  position: fixed;
+  /*position: fixed;*/
   bottom: 100;
   right: 60%;
-  z-index: 10000;
+  /*z-index: 10000;*/
 
   font-size: 13px;
 
   width: 300px;
 
-  background-color: whiteSmoke;
-  border: 1px solid #EEE;
+  background-color: #66D2BC;
+  x: 1px solid #EEE;
   margin-bottom: 0;
-  -webkit-border-radius: 6px 6px 6px 6px;
-  -moz-border-radius: 6px 6px 6px 6px;
-  border-radius: 6px 6px 6px 6px;
+  -webkit-x-radius: 6px 6px 6px 6px;
+  -moz-x-radius: 6px 6px 6px 6px;
+  x-radius: 6px 6px 6px 6px;
   padding-left: 10px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .pusher-chat-widget-header {
-  border-bottom: 1px solid #EBEBEB;
+  x-bottom: 1px solid #EBEBEB;
   margin-bottom: 5px;
   padding-bottom: 5px;
   margin-top: 5px;
@@ -71,9 +71,9 @@
   font-size: 11px;
   line-height: normal;
   padding: 5px 10px 5px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  -webkit-x-radius: 6px;
+  -moz-x-radius: 6px;
+  x-radius: 6px;
   vertical-align: top;
 
   color: white;
@@ -82,11 +82,11 @@
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  border: 1px solid #CCC;
+  x: 1px solid #CCC;
 }
 
 .pusher-chat-widget-footer {
-  border-top: 1px solid #EBEBEB;
+  x-top: 1px solid #EBEBEB;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -115,18 +115,18 @@
 
 .pusher-chat-widget ul.activity-stream li {
   position: relative;
-  border-bottom: 1px solid #EBEBEB;
+  x-bottom: 1px solid #EBEBEB;
   clear: both;
   display: block;
   outline: none;
   margin-top: -1px;
-  border-top: 1px solid transparent;
+  x-top: 1px solid transparent;
   overflow: auto;
 }
 
 .pusher-chat-widget ul.activity-stream li.chat-message {
   background-color: #DDF4FB;
-  border-color: #C6EDF9;
+  x-color: #C6EDF9;
   color: #404040;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
