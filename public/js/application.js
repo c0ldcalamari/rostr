@@ -2,27 +2,13 @@ $(document).ready(function() {
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
   // when we try to bind to them
-
-  showSignup();
+  loginInitial();
+  showForm();
   showLogin();
   cancel();
-  showForm();
+
 });
 
-
-var showSignup = function(){
-  $("#signup").on('click', function(event){
-    $(".button").hide();
-    $("#signup-form").show();
-  })
-}
-
-var showLogin = function(){
-  $("#login").on('click', function(event){
-    $(".button").hide();
-    $("#login-form").show();
-  })
-}
 
 var cancel = function(){
   $(".cancel").on('click', function(event){
@@ -35,6 +21,18 @@ var cancel = function(){
 var showForm = function(){
   $("#create-user-button").on("click", function(event){
     $('#create_user_form').show();
-    $(this).hide()
+    $(this).hide();
   })
+}
+
+var showLogin = function(){
+  $(".login-button").on("click", function(event){
+    $("#login-form").show();
+    $(this).hide();
+  })
+}
+
+var loginInitial = function(){
+  $("#login-form").hide();
+  $("#login-button").show();
 }
