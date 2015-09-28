@@ -1,50 +1,99 @@
 
-
 <% @show_nav = false %>
+<div class="splash-container">
+    <div class="splash">
+		<div id="logo" class="ta-cen z-10">
+			<img src="http://i.imgur.com/IC0hEnt.png">
+		</div>
 
-<div id="logo" class="ta-cen z-10">
-	<img src="http://i.imgur.com/IC0hEnt.png">
-	<p class="fs-125 bold">
-		Create balanced teams for your <br> group projects or events!
-	</p>
-</div>
+<<<<<<< HEAD
+		<div class="col span-6-d h-60 bg-green ta-cen">
+			<div class="col span-12-d h-25 bg-green"></div>
+			<div>
+			<h2>Organizer</h2>
+			<form action="/sessions" method="post" class="pure-form form" id="login-form">
+				<fieldset>
+					<input type="text" name="username" placeholder="Username" class="ta-cen">
+					<input type="password" name="password" placeholder="Password" class="ta-cen"><br>
+					<input type="submit" value="Login" class="pure-button pure-button-primary" id="login-button">
+					<button class="pure-button pure-button-primary cancel">Cancel</button>
+				</fieldset>
+			</form>
 
-<div class="col span-6-d h-50 bg-green ta-cen">
-	<div class="col span-12-d h-25 bg-green"></div>
-	<h2>Organizer</h2>
-	<form action="/sessions" method="post" class="pure-form pure-form-aligned">
-		<fieldset>
-			<div class="pure-control-group">
-				<input type="text" name="username" placeholder="Username" class="ta-cen">
+			<button id="login-button" class="login-button pure-button pure-button-primary button">Login</button>
+		</div>
+		<div>
+			<p>Want to create an event?</p>
+			<button id="create-user-button" class="pure-button pure-button-primary button">Sign Up</button>
+
+			<form id="create_user_form" class="form pure-form" action="/user" method="post">
+				<h2>Sign Up</h2>
+				<input type="text" name="username" placeholder="Username">
+		  		<input type="password" name="password" placeholder="Password"><br>
+		  		<input type="submit" value="Create" class="pure-button pure-button-primary">
+				<button class="pure-button pure-button-primary cancel">Cancel</button>
+			</form>
+		</div>
+		</div>
+
+		<div class="col span-6-d h-60 bg-greena">
+			<div class="col span-12-d h-25 bg-greens"></div>
+			<div class="ta-cen">
+				<h2>Participant</h2>
+				<form action="/events">
+		    		<input type="submit" value="Events" class="pure-button pure-button-primary">
+				</form>
+				<p>
+					If you have been invited
+					by an organizer,<br> 
+					find your listed event.
+				</p>
 			</div>
-			<div class="pure-control-group">
-				<input type="password" name="password" placeholder="Password" class="ta-cen">
-			</div>
-			<div class="pure-control-group">
-				<input type="submit" value="Login" class="pure-button pure-button-primary">
-			</div>
-		</fieldset>
-	</form><br>
-
-<p>Want to create an event?</p>
-<button id="create-user-button"class="pure-button pure-button-primary button">Sign Up</button>
-<form id="create_user_form" class="form" action="/user" method="post">
-  <input type="text" name="username" placeholder="Username"> <br>
-  <input type="password" name="password" placeholder="Password"><br>
-  <input type="submit" value="Create" class="pure-button pure-button-primary">
-	<button class="pure-button pure-button-primary cancel">Cancel</button>
-</form>
-
-</div>
-
-<div class="col span-6-d h-50 bg-greena">
-	<div class="col span-12-d h-25 bg-greens"></div>
-	<div class="ta-cen">
-		<h2>Participant</h2>
-		<form action="/events">
-    		<input type="submit" value="Events" class="pure-button pure-button-primary">
-		</form>
+		</div>
 	</div>
+</div>
+
+<div class="content-wrapper bg-gray ta-cen">
+    <div class="content ta-cen">
+        <h2 class="content-head is-center project ta-cen">Learn More</h2>
+        <p>
+			Rostr is an application developed to help organizers, teachers, <br>
+			and planners alike form evenly skilled groups and teams. Consequently, <br>
+			to promote a better learning environment for all those participating.
+		</p>
+		<p>
+			Rostr was developed at a back-to-school themed hack-a-thon held by Devbootcamp, San Francisco.<br>
+			The idea fruitioned to solve the problem we were currently facing at the event<br>
+			trying to organize ourselves into teams well-balanced teams.<br>
+			We felt organizers needed a tool, so we set forth to create one. 
+		</p>
+		<p>
+			Rostr won the hack-a-thon, for it's practicality and algorithm.<br>
+			Currently, Rostr is still an ongoing project for the original team members. Can't stop, won't stop.	
+		</p>
+		<div class="debug ta-cen padb-2 mb-3">
+			<div class="ml-25 f-l">
+				<i class="fa fa-user fa-5x"></i><br>
+				Andrew Pham
+			</div>
+			<div class="ml-2 f-l">
+				<i class="fa fa-user fa-5x"></i><br>
+				Zoe Ingram
+			</div>			
+			<div class="ml-2 f-l">
+				<i class="fa fa-user fa-5x"></i><br>
+				Brenda Nguyen
+			</div>			
+			<div class="ml-2 f-l">
+				<i class="fa fa-user fa-5x"></i><br>
+				Diana Lozano
+			</div>			
+			<div class="ml-2 f-l padb-2">
+				<i class="fa fa-user fa-5x"></i><br>
+				Alex De La Peno
+			</div>
+		</div>
+    </div>
 </div>
 
 <% if @errors %>
