@@ -1,18 +1,25 @@
 <% @show_nav = true %>
 
-<!-- organizer starts the event -->
-<!-- ajax the student auto updates -->
-<h1><%= @event.title %> </h1>
+<div class="debug container">
 
-<div id="student_list">
-  <ol>
-  <% @students.each do |student| %>
-  <li><%= student.name  %></li>
-  <% end %>
-  </ol>
+  <div class="debug row span-12-d ma-0 ta-cen bg-gray padt-1 br-5">
+    <h1><%= @event.title %></h1>
+    <p><%= @event.description %></p>
+  </div>
+
+  <div class="bg-greena">
+    <form id="start_event"action="/user/<%=current_user.id %>/event/<%= @event.id %>/groups/create" method="post" class="ml-25">
+      <input type="submit" value="Create Groups" class="pure-button pure-button-primary">
+    </form>
+
+    <div id="student_list" class="h-40 ml-10">
+      <ol class="wait-list">
+        <% @students.each do |student| %>
+          <li class="wait-list"><%= student.name %></li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+
+
 </div>
-
-<form id="start_event"action="/user/<%=current_user.id %>/event/<%= @event.id %>/groups/create" method="post">
-<input type="submit" value="Create Groups">
-</form>
-
