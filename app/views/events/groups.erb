@@ -1,31 +1,43 @@
+<% @show_nav = true %>
 
+<div class="debug container">
 
-<h1> <%= @event.title%> has started. </h1>
-<h2> Groups listed below <h2>
+  <div class="debug row span-12-d ma-0 ta-cen bg-gray padt-1 br-5">
+    <h1> <%= @event.title%> has started. </h1>
+    <h2> Groups listed below <h2>
+  <div>
 
-<div id="group_list">
-  <ol>
-  <% @groups.each do |group| %>
-      <li>
-      <%= group.name %>
-      <% group.students.each do |student|  %>
-      <ul>
-        <li><%= student.name %></li>
-          <li>
-      <div class="base" </div>
-    <% student.categories.each do |category| %>
-      <% if category.rating == "advanced" %>
-        <div class="advanced"> </div>
-      <% end %>
-    <% end %>
-  </li><br>
-    </ul>
-      <% end %>
-  <% end %>
-  </ol>
-</div>
-
-<form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
-<inut type="submit" value="Start Event">
+    <form id="start_event "action="/user/<%=current_user.id %>/event/<%= @event.id %>" method="post">
+  <input type="submit" value="Start Event" class="pure-button pure-button-primary">
 </form>
 
+
+  <div id="group_list" class="col span-12-d">
+    <% @groups.each do |group| %>
+    <ul>
+      <div class="debug span-10-d  bg-greena br-1g ma-0">
+          <p><%= group.name %></p>
+
+          <% group.students.each do |student|  %>
+
+          <div class="debug d-inb span-10-d ta-l">
+            <div class="debug w-10 d-inb"><%= student.name %></div>
+            <div class="base padl-3 d-inb">
+              <% student.categories.each do |category| %>
+                <% if category.rating == "advanced" %>
+                    <div class="advanced padr-3"> </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+            <br><br>
+
+
+
+            <% end %>
+      </ul>
+        <% end %>
+      </div>
+  </div>
+
+</div>

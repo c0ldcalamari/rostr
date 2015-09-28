@@ -1,8 +1,9 @@
 <% @show_nav = true %>
 <!-- organizer dashboard for all their events -->
-<div class="container ta-cen">
+<div class="debug container ta-cen h-45">
 
-  <h1>Welcome <%=@user.username%></h1>
+  <h1 class="bg-gray">Welcome, <%=@user.username%>!</h1>
+
 
 
   <div class="">
@@ -24,6 +25,7 @@
         <% @events.each do |event|  %>
           <tr>
               <td><a href="/user/<%=current_user.id%>/event/<%=event.id%>"><%= event.title%></a></td>
+
               <td><%= event.description%></td>
               <td>
                 <% if event.created %>
@@ -50,8 +52,41 @@
     <span class="m-1"><i class="fa fa-calendar-check-o c-green"></i> Event has started</span>
     <span class="m-1"><i class="fa fa-calendar-times-o c-red"></i> Event is finished</span>
   <div>
-  <form action="#" class="ta-l">
-    <input type="submit" value="New Event" class="pure-button pure-button-primary ta-l">
-  </form>
+
+
+
+    <div class="debug span-6-d ma-0 mb-15 mt-5">
+      <button id="create-user-button" class="pure-button pure-button-primary button">Create Event</button>
+
+      <form id="create_user_form" action="/user/<%=current_user.id %>/create" method="post" class="pure-form pure-form-aligned form">
+        <div class="pure-control-group">
+          <p>Event Title:</p>
+          <input type="text" name="title" placeholder="Event Title" class="w-20">
+        </div>
+        <div class="pure-control-group">
+          <p>Description:</p>
+          <input type="text" name="description" placeholder="Event Description" class=" w-20">
+        </div>
+        <p>Subjects to be sorted on: </p>
+        <div class="pure-control-group">
+          <input type="text" name="subject1" placeholder="Subject 1">
+        </div>
+        <div class="pure-control-group">
+          <input type="text" name="subject2" placeholder="Subject 2">
+        </div>
+        <div class="pure-control-group">
+          <input type="text" name="subject3" placeholder="Subject 3">
+        </div>
+        <div class="pure-control-group">
+          <input type="text" name="subject4" placeholder="Subject 4">
+        </div>
+        <div class="pure-control-group">
+          <input type="text" name="subject5" placeholder="Subject 5">
+        </div>
+        <input type="submit" value="Create Event" class="pure-button pure-button-primary">
+        <button class="pure-button pure-button-primary cancel">Cancel</button>
+      </form>
+  </div>
+</div>
   </div>
 </div>
