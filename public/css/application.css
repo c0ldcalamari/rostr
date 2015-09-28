@@ -33,13 +33,13 @@ input[type="radio"] {
 
 .advanced {
   padding-right: 1em;
-  background-color: green;
+  background-color: #111D74;
   display: inline;
 }
 
 .base {
   padding-left: 1em;
-  background-color: green;
+  background-color: #111D74;
   display: inline;
 }
 
@@ -75,7 +75,11 @@ input[type="radio"] {
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 
-
+ol li {
+  float: left;
+  width: 15em;
+  height: 2em;
+}
 
 
 .form {display: none;}

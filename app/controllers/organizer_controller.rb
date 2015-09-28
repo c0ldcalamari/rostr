@@ -1,11 +1,14 @@
 # controller for organizer
 # homepage
 get '/' do
-  if logged_in?
-    redirect "/user/#{current_user.id}"
-  else
+  # if logged_in?
+  #   redirect "/user/#{current_user.id}"
+  # else
+  #   erb :"organizers/home"
+  # end
+
     erb :"organizers/home"
-  end
+
 end
 
 # events students can see
