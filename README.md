@@ -22,26 +22,4 @@ Rostr
 * See [LICENSE](https://github.com/ajdlp/rostr/blob/master/LICENSE)
 
 
-## Contact
-#### Developers
-* Homepage: alexdelapena.me
-* E-mail: ajdlp12@gmail.com
-* LinkedIn: [Alex DeLaPena](https://linkedin.com/in/alexdelapena)
-
-* Homepage: 
-* E-mail: 
-* LinkedIn: [Andrew Pham](https://linkedin.com/in/)
-
-* Homepage: 
-* E-mail: 
-* LinkedIn: [Brenda Nguyen](https://linkedin.com/in/)
-
-* Homepage: 
-* E-mail: 
-* LinkedIn: [Diana Lozano](https://linkedin.com/in/)
-
-* Homepage: 
-* E-mail: 
-* LinkedIn: [Zoe Ingram](https://linkedin.com/in/)
-
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=username&url=https://github.com/username/sw-name&title=sw-name&language=&tags=github&category=software) 
